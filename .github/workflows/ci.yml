@@ -25,7 +25,7 @@ jobs:
             ~/.bun
             ~/.npm
             ~/.node
-          key: ${{ runner.os }}-${{ hashFiles('**/workflows/*.yml', '**/package.json', '**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/workflows/*.yml', '**/package.json') }}
       - run: echo "${{ needs.bun.outputs.BUN_BIN }}" >> "$GITHUB_PATH"
       - run: |
           cd nestjs-01-getting-started
